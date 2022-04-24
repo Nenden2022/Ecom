@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Reveal from 'react-awesome-reveal';
 import { useQuery } from '@apollo/react-hooks';
 
-// Import Apollo Server and Query
-import withApollo from '../../../../server/apollo';
-import { GET_SPECIAL_PRODUCTS } from '../../../../server/queries';
-
 // Import Custom Component
 import ProductThree from '../../../features/products/product-three';
 
@@ -40,7 +36,6 @@ function ProductWidgetContainer() {
                                     <div className="skel-product-col skel-pro mb-2" key={"ProductThree" + index}></div>
                                 )
                                 :
-
                                 <>
                                     <h4 className="section-sub-title">Featured Products</h4>
                                     {
@@ -118,4 +113,4 @@ function ProductWidgetContainer() {
     )
 }
 
-export default withApollo({ ssr: typeof window === 'undefined' })(ProductWidgetContainer);
+export default ProductWidgetContainer;

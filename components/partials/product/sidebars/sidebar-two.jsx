@@ -3,10 +3,6 @@ import StickyBox from 'react-sticky-box';
 import { useQuery } from '@apollo/react-hooks';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-// Import Aollo Server and Query
-import withApollo from '../../../../server/apollo';
-import { GET_SHOP_SIDEBAR_DATA } from '../../../../server/queries';
-
 // Import Custom Component
 import ProductThree from '../../../features/products/product-three';
 import OwlCarousel from '../../../features/owl-carousel';
@@ -135,4 +131,4 @@ function ProductSidebarTwo({ data }) {
     )
 }
 
-export default withApollo({ ssr: typeof window === 'undefined' })(ProductSidebarTwo);
+export default ProductSidebarTwo;

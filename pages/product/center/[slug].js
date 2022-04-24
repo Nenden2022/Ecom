@@ -2,10 +2,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
 
-// Import Apollo Server and Query
-import withApollo from '../../../server/apollo';
-import { GET_PRODUCT } from '../../../server/queries';
-
 // Import Custom Component
 import ALink from '../../../components/common/ALink';
 import ProductMediaSeven from '../../../components/partials/product/media/product-media-seven';

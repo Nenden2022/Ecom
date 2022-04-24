@@ -6,9 +6,9 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 // Import Custom Component
 import ALink from '../ALink';
 
-// Import Apollo Server and Query
-import { GET_PRODUCTS } from '../../../server/queries';
-import withApollo from '../../../server/apollo';
+// // Import Apollo Server and Query
+// import { GET_PRODUCTS } from '../../../server/queries';
+// import withApollo from '../../../server/apollo';
 
 function SearchForm() {
     const router = useRouter();
@@ -160,4 +160,4 @@ function SearchForm() {
     );
 }
 
-export default withApollo({ ssr: typeof window === 'undefined' })(SearchForm);
+export default SearchForm;

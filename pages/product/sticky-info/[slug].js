@@ -11,10 +11,6 @@ import SingleTabFive from '../../../components/partials/product/tabs/single-tab-
 import RelatedProducts from '../../../components/partials/product/widgets/related-products';
 import ProductWidgetContainer from '../../../components/partials/product/widgets/product-widget-container';
 
-// import Apollo Server and Query
-import withApollo from '../../../server/apollo';
-import { GET_PRODUCT } from '../../../server/queries';
-
 function ProductStickyInfo({ data, error, loading }) {
     if (!useRouter().query.slug) return (
         <div className="loading-overlay">
