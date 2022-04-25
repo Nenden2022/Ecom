@@ -1,8 +1,6 @@
 import React from 'react';
 import StickyBox from 'react-sticky-box';
 import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
-
 // import Custom Component
 import ALink from '../../../components/common/ALink';
 import ProductMediaFive from '../../../components/partials/product/media/product-media-five';

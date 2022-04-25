@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
-
 // Import Custom Component
 import ALink from '../../../components/common/ALink';
 import ProductMediaOne from '../../../components/partials/product/media/product-media-one';

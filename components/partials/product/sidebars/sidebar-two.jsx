@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import StickyBox from 'react-sticky-box';
-import { useQuery } from '@apollo/react-hooks';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // Import Custom Component

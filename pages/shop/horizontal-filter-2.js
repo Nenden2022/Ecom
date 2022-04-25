@@ -1,15 +1,9 @@
 import { useRouter } from 'next/router';
-import { useLazyQuery } from '@apollo/react-hooks';
-import { useState, useEffect } from 'react';
-
 import ALink from '../../components/common/ALink';
 import ShopBanner from '../../components/partials/shop/shop-banner';
 import ShopSidebarTwo from '../../components/partials/shop/sidebar/shop-sidebar-two';
 import Pagination from '../../components/features/pagination';
 import ProductsGrid from '../../components/partials/products-collection/product-grid';
-
-import withApollo from '../../server/apollo';
-import { GET_PRODUCTS } from '../../server/queries';
 
 function ShopHorizontalTwo() {
     const router = useRouter();
@@ -218,4 +212,4 @@ function ShopHorizontalTwo() {
     )
 }
 
-export default withApollo({ ssr: typeof window === 'undefined' })(ShopHorizontalTwo);
+export default ShopHorizontalTwo;

@@ -1,11 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { useQuery } from '@apollo/react-hooks';
 
 import ALink from '../../../common/ALink';
-
-import withApollo from '../../../../server/apollo';
-import { GET_SHOP_SIDEBAR_DATA } from '../../../../server/queries';
 
 import { shopColors, shopSizes } from '../../../../utils/data/shop';
 
@@ -122,4 +118,4 @@ function ShopSidebarTwo() {
     )
 }
 
-export default withApollo({ ssr: typeof window === 'undefined' })(ShopSidebarTwo);
+export default ShopSidebarTwo;

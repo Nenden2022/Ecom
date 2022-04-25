@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useLazyQuery } from '@apollo/react-hooks';
 
 import ALink from '../../components/common/ALink';
 import ShopBanner from '../../components/partials/shop/shop-banner';
 import ShopSidebarOne from '../../components/partials/shop/sidebar/shop-sidebar-one';
 import Pagination from '../../components/features/pagination';
 import ProductsGrid from '../../components/partials/products-collection/product-grid';
-
-import withApollo from '../../server/apollo';
-import { GET_PRODUCTS } from '../../server/queries';
 
 function ShopRightSidebar() {
     const router = useRouter();
@@ -51,12 +47,12 @@ function ShopRightSidebar() {
                 page: 1
             }
         });
-        router.push( {
+        router.push({
             query: {
                 ...query,
                 page: 1
             }
-        } );
+        });
     }
 
     function onSortByChange(e) {
@@ -176,10 +172,10 @@ function ShopRightSidebar() {
                                 </div>
 
                                 <div className="toolbox-item layout-modes">
-                                    <ALink href={ { pathname: router.pathname, query: query } } className="layout-btn btn-grid active" title="Grid">
+                                    <ALink href={{ pathname: router.pathname, query: query }} className="layout-btn btn-grid active" title="Grid">
                                         <i className="icon-mode-grid"></i>
                                     </ALink>
-                                    <ALink href={ { pathname: '/shop/list', query: query } } className="layout-btn btn-list" title="List">
+                                    <ALink href={{ pathname: '/shop/list', query: query }} className="layout-btn btn-list" title="List">
                                         <i className="icon-mode-list"></i>
                                     </ALink>
                                 </div>
@@ -216,4 +212,4 @@ function ShopRightSidebar() {
     )
 }
 
-export default withApollo({ ssr: typeof window === 'undefined' })(ShopRightSidebar);
+export default ShopRightSidebar;

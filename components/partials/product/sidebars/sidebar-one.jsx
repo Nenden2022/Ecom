@@ -2,8 +2,6 @@ import React, { useEffect, useMemo } from 'react';
 import SlideToggle from 'react-slide-toggle';
 import StickyBox from 'react-sticky-box';
 import Tree from 'rc-tree';
-import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // Import Custom Component

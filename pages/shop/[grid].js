@@ -1,15 +1,11 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { useLazyQuery } from '@apollo/react-hooks';
 
 import ALink from '../../components/common/ALink';
 import ShopBanner from '../../components/partials/shop/shop-banner';
 import ShopSidebarOne from '../../components/partials/shop/sidebar/shop-sidebar-one';
 import Pagination from '../../components/features/pagination';
 import ProductsGrid from '../../components/partials/products-collection/product-grid';
-
-import withApollo from '../../server/apollo';
-import { GET_PRODUCTS } from '../../server/queries';
 
 function ShopGrid() {
     const router = useRouter();
@@ -233,4 +229,4 @@ function ShopGrid() {
     )
 }
 
-export default withApollo({ ssr: typeof window === 'undefined' })(ShopGrid);
+export default ShopGrid;

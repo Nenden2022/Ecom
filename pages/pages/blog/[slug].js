@@ -1,9 +1,4 @@
-import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
-
-// Import Apollo Server and Query
-import withApollo from '../../../server/apollo';
-import { GET_POST } from "../../../server/queries";
 
 // Import Custom Component
 import ALink from '../../../components/common/ALink';
@@ -15,8 +10,8 @@ import BlogSingle from '../../../components/features/blogs/blog-single';
 //Import Settings
 import { blogSlider } from '../../../utils/data/slider';
 
-function Single () {
-    if ( !useRouter().query.slug ) return (
+function Single() {
+    if (!useRouter().query.slug) return (
         <div className="loading-overlay">
             <div className="bounce-loader">
                 <div className="bounce1"></div>
@@ -27,12 +22,12 @@ function Single () {
     );
 
     const slug = useRouter().query.slug;
-    const { data, loading, error } = useQuery( GET_POST, { variables: { slug } } );
+    const { data, loading, error } = useQuery(GET_POST, { variables: { slug } });
     const blog = data && data.post.data;
     const related = data && data.post.related;
 
-    if ( error ) {
-        return useRouter().push( '/pages/404' );
+    if (error) {
+        return useRouter().push('/pages/404');
     }
 
     return (
@@ -42,15 +37,15 @@ function Single () {
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><ALink href="/"><i className="icon-home"></i></ALink></li>
                         <li className="breadcrumb-item"><ALink href="/pages/blog">Blog</ALink></li>
-                        <li className="breadcrumb-item active" aria-current="page">{ blog && blog.title }</li>
+                        <li className="breadcrumb-item active" aria-current="page">{blog && blog.title}</li>
                     </ol>
                 </div>
             </nav>
 
-            <div className={ `container skeleton-body skel-shop-products ${loading ? '' : 'loaded'}` }>
+            <div className={`container skeleton-body skel-shop-products ${loading ? '' : 'loaded'}`}>
                 <div className="row">
                     <div className="col-lg-9">
-                        <BlogSingle blog={ blog } loading={ loading } />
+                        <BlogSingle blog={blog} loading={loading} />
 
                         {
                             !loading && !related.length ?
@@ -62,16 +57,16 @@ function Single () {
                                     <div className="related-posts">
                                         <h4>Related <strong>Posts</strong></h4>
 
-                                        <OwlCarousel adClass="related-posts-carousel" options={ blogSlider }>
+                                        <OwlCarousel adClass="related-posts-carousel" options={blogSlider}>
                                             {
                                                 loading ?
-                                                    new Array( 3 ).fill( 1 ).map( ( item, index ) => (
-                                                        <div className="skel-pro skel-pro-grid" key={ "Skeleton:" + index }></div>
-                                                    ) )
+                                                    new Array(3).fill(1).map((item, index) => (
+                                                        <div className="skel-pro skel-pro-grid" key={"Skeleton:" + index}></div>
+                                                    ))
                                                     :
-                                                    related.map( ( blog, index ) => (
-                                                        <BlogTypeThree blog={ blog } key={ "BlogTypeThree" + index } />
-                                                    ) )
+                                                    related.map((blog, index) => (
+                                                        <BlogTypeThree blog={blog} key={"BlogTypeThree" + index} />
+                                                    ))
                                             }
                                         </OwlCarousel>
                                     </div>
@@ -82,8 +77,8 @@ function Single () {
                     <BlogSidebar />
                 </div>
             </div>
-        </main >
+        </main>
     )
 }
 
-export default withApollo( { ssr: typeof window === "undefined" } )( Single );
+export default Single;

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Reveal from 'react-awesome-reveal';
-import { useQuery } from '@apollo/react-hooks';
 
 // Import Custom Component
 import ProductThree from '../../../features/products/product-three';

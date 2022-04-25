@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useLazyQuery } from '@apollo/react-hooks';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // Import Custom Component
 import ALink from '../ALink';
-
-// // Import Apollo Server and Query
-// import { GET_PRODUCTS } from '../../../server/queries';
-// import withApollo from '../../../server/apollo';
 
 function SearchForm() {
     const router = useRouter();
